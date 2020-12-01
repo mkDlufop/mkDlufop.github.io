@@ -22,3 +22,6 @@ navbar:
    link: "about"
  - name: "Links"
    absolute-link: "https://mkdlufop.github.io/"
+
+google:
+    analytics_id: "G-Q1QGCB6SJM"
