@@ -14,3 +14,4 @@ gc()	运行垃圾收集例程
 freescenebitmaps()	释放分配给位图的内存
 
 clearundobuffer()	清除撤销缓冲区（就是把撤销操作的缓存删除）
+
