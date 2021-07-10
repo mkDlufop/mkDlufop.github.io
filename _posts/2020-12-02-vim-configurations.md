@@ -10,7 +10,7 @@ tags: [vim]
 ```
 "==================================================================
 "1,Workbench
-"2,FIleSetting
+"2,FileSetting
 "3,TextEdit
 "4,Keymap
 "5,Appearance
@@ -23,7 +23,7 @@ set noundofile " 不生成撤销文件，FileName.un.~
 set nobackup " 不生成备份文件，FileName.~
 set noswapfile 
 setlocal noswapfile " 不要生成swap文件
-set autoread "设置当文件在外部被修改，自动更新该文件
+set autoread " 设置当文件在外部被修改，自动更新该文件
 set nocompatible " 关闭 vi 兼容模式
 set clipboard+=unnamed " 共享剪切板
 set autochdir " 自动切换当前目录为当前文件所在的目录
@@ -46,10 +46,10 @@ set guioptions-=l " 隐藏左侧滚动条
 set guioptions-=L 
 " set guioptions-=m " 隐藏菜单栏
 """""""""" 语言设置
-set langmenu=zh_CN.UTF-8
+" set langmenu=zh_CN.UTF-8
 set helplang=cn
 """""""""" vim提示信息乱码解决
-language message zh_CN,utf-8
+" language message zh_CN,utf-8
 """""""""" 状态栏设置
 set laststatus=2 " 显示状态栏 (默认值为 1, 无法显示状态栏)
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ Ln\ %l,\ Col\ %c/%L%) " 设置在状态行显示的信息
@@ -77,8 +77,8 @@ func SetTitle()
 		if &filetype == 'sh'
 				call setline(1,"\#########################################################################")
 				call append(line("."), "\# File Name: ".expand("%"))
-				call append(line(".")+1, "\# Author: geeker")
-				call append(line(".")+2, "\# mail: 932834897@qq.com")
+				call append(line(".")+1, "\# Author: mkDlufop")
+				call append(line(".")+2, "\# mail: mkDlufopqq.com")
 				call append(line(".")+3, "\# Created Time: ".strftime("%c"))
 				call append(line(".")+4, "\#########################################################################")
 				call append(line(".")+5, "\#!/bin/bash")
@@ -86,8 +86,8 @@ func SetTitle()
 		else
 				call setline(1, "/*************************************************************************")
 				call append(line("."), "    > File Name: ".expand("%"))
-				call append(line(".")+1, "    > Author: geeker")
-				call append(line(".")+2, "    > Mail: 932834897@qq.com ")
+				call append(line(".")+1, "    > Author: mkDlufop")
+				call append(line(".")+2, "    > Mail: mkDlufop@qq.com ")
 				call append(line(".")+3, "    > Created Time: ".strftime("%c"))
 				call append(line(".")+4, " ************************************************************************/")
 				call append(line(".")+5, "")
@@ -187,9 +187,11 @@ endfunc
 "==================================================================
 "5,Appearance
 "==================================================================
-colorscheme evening " 设定配色方案
+" colorscheme evening " 设定配色方案
 " color asmanian2 " 设置背景主题
+" set background=dark
 "
+
 
 
 
