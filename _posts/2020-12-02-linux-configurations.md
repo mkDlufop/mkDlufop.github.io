@@ -39,6 +39,16 @@ tags: [Linux]
 
    usermod -aG wheel mkDlufop
 
+##### 关闭sudo
+
+ 1. 打开visudo: sudo visudo
+
+ 2. 修改 %sudo   ALL=(ALL:ALL) ALL 为 %sudo   ALL=(ALL:ALL) NOPASSWD:ALL，它的作用是
+
+    Allow members of group sudo to execute any command **without password**。
+    
+    > 有安全风险，请谨慎使用。
+
 
 ##### 虚拟机辅助工具
 
@@ -81,8 +91,12 @@ tags: [Linux]
    apt install java-common oracle-java8-installer
    apt install oracle-java8-set default
 
-3. 
+3. 安装zsh
 
+   apt install zsh
+   
+   chsh -s $(which zsh) # 切换默认shell为zsh
+   
    
 
 
