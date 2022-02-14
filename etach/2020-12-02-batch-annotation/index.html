@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+
+    <title>vim之批量注释和取消注释 - mkDlufop`s blog</title>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QJCB6SJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q1QJCB6SJM');
+    </script>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, mkDlufop, mkDlufop`s blog, jekyll">
+    <meta name="author" content="mkDlufop">
+
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+    <link rel="icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+    <link rel="shortcut-icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+
+    <!-- For Facebook -->
+    <meta property="og:title" content="vim之批量注释和取消注释 - mkDlufop`s blog" />
+    <meta property="og:image" itemprop="image" content="http://localhost:4000/assets/favicon.ico" />
+    <meta property="og:description" content="" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="vim之批量注释和取消注释 - mkDlufop`s blog" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/favicon.ico" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+    <a class="site-title" href="http://localhost:4000/">mkDlufop`s blog</a>
+
+    <ul class="pull-right">
+        
+        <li class="pull-left">
+            
+            <a href="http://localhost:4000/about">About</a>
+            /
+        </li>
+        
+        <li class="pull-left">
+            
+            <a href="https://mkdlufop.github.io/">Links</a>
+            
+        </li>
+        
+    </ul>
+
+    <hr>
+</div>
+        <div class="page-title">
+            vim之批量注释和取消注释
+        </div>
+        <div class="content">
+            <div class="page-subtitle">
+    
+        
+            <b>[</b>
+        
+        <a href="/tags/#vim" title="vim">vim</a>
+        
+            <b>]</b>
+        
+    
+</div>
+
+<h3 id="块选择模式">块选择模式</h3>
+
+<h5 id="插入注释">插入注释：</h5>
+
+<p>1，按住control+v进入列模式</p>
+
+<p>2，移动光标选择要注释的行</p>
+
+<p>3，按大写的“I”进入插入模式，输入注释符“#“或“//”</p>
+
+<p>4，按”esc“键，即可添加注释</p>
+
+<h5 id="取消注释">取消注释：</h5>
+
+<p>1，按住control+v进入列模式</p>
+
+<p>2，选择要删除的行首的注释符，如”//“有两列就要选中两列，再按”d“键</p>
+
+<p>即可取消注释</p>
+
+<h3 id="替换命令注释会添加于行首">替换命令(注释会添加于行首)</h3>
+
+<h5 id="插入注释-1">插入注释：</h5>
+
+<p>：起始行号，结束行号s/^/注释符/g</p>
+
+<h5 id="取消注释-1">取消注释：</h5>
+
+<p>：起始符号，结束符号s/^注释符//g</p>
+
+<h5 id="例">例：</h5>
+
+<p>在4~9行添加注释：</p>
+
+<p>:4,9s#^#//#g</p>
+
+<p>在4~9行取消注释：</p>
+
+<p>:4,9s#^//##g</p>
+
+
+
+        </div>
+        <div class="footer">
+    
+        <br>
+    
+</div>
+
+    </div>
+</body>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+
+    <title>/dev/sda*:clean,*/*files,*/*blocks - mkDlufop`s blog</title>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QJCB6SJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q1QJCB6SJM');
+    </script>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, mkDlufop, mkDlufop`s blog, jekyll">
+    <meta name="author" content="mkDlufop">
+
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+    <link rel="icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+    <link rel="shortcut-icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+
+    <!-- For Facebook -->
+    <meta property="og:title" content="/dev/sda*:clean,*/*files,*/*blocks - mkDlufop`s blog" />
+    <meta property="og:image" itemprop="image" content="http://localhost:4000/assets/favicon.ico" />
+    <meta property="og:description" content="" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="/dev/sda*:clean,*/*files,*/*blocks - mkDlufop`s blog" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/favicon.ico" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+    <a class="site-title" href="http://localhost:4000/">mkDlufop`s blog</a>
+
+    <ul class="pull-right">
+        
+        <li class="pull-left">
+            
+            <a href="http://localhost:4000/about">About</a>
+            /
+        </li>
+        
+        <li class="pull-left">
+            
+            <a href="https://mkdlufop.github.io/">Links</a>
+            
+        </li>
+        
+    </ul>
+
+    <hr>
+</div>
+        <div class="page-title">
+            /dev/sda*:clean,*/*files,*/*blocks
+        </div>
+        <div class="content">
+            <div class="page-subtitle">
+    
+        
+            <b>[</b>
+        
+        <a href="/tags/#Linux" title="Linux">Linux</a>
+        
+            <b>]</b>
+        
+    
+</div>
+
+<h3 id="前言">前言</h3>
+
+<p>系统版本：Ubuntu 20.04.3 LTS</p>
+
+<p>系统睡眠后进入登陆页面输入密码登陆，密码输入框无法选中，导致密码无法输入，随后多次强制重启。多次强制重启后，系统还是处于黑屏状态，最上面有一行：/dev/sda*:clean, */*files, */*blocks	(以上*为数字)。所幸可以通过ctrl+alt+f1~f8进入到tty界面，只是无法进入GUI界面。</p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>通过查询资料总结了以下三种方案。</p>
+
+<p>方案一：重装Nvidia驱动。</p>
+
+<p>方案二：清理存储空间。</p>
+
+<p><strong>方案三：重装GUI。</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1，sudo apt <span class="nb">install</span> <span class="nt">--reinstall</span> ubuntu-desktop
+
+2，reboot
+</code></pre></div></div>
+
+<p>由于所用到的物理机无Nvidia显卡且剩余存储空间足够大，故采用方案三。</p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<p>[1] https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w</p>
+
+<p>[2] https://askubuntu.com/questions/1198488/dev-sda2-clean-files-blocks</p>
+
+
+        </div>
+        <div class="footer">
+    
+        <br>
+    
+</div>
+
+    </div>
+</body>

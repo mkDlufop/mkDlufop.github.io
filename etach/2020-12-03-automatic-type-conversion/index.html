@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+
+    <title>自动类型转换&强制类型转换 - mkDlufop`s blog</title>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QJCB6SJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q1QJCB6SJM');
+    </script>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, mkDlufop, mkDlufop`s blog, jekyll">
+    <meta name="author" content="mkDlufop">
+
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+    <link rel="icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+    <link rel="shortcut-icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+
+    <!-- For Facebook -->
+    <meta property="og:title" content="自动类型转换&强制类型转换 - mkDlufop`s blog" />
+    <meta property="og:image" itemprop="image" content="http://localhost:4000/assets/favicon.ico" />
+    <meta property="og:description" content="" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="自动类型转换&强制类型转换 - mkDlufop`s blog" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/favicon.ico" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+    <a class="site-title" href="http://localhost:4000/">mkDlufop`s blog</a>
+
+    <ul class="pull-right">
+        
+        <li class="pull-left">
+            
+            <a href="http://localhost:4000/about">About</a>
+            /
+        </li>
+        
+        <li class="pull-left">
+            
+            <a href="https://mkdlufop.github.io/">Links</a>
+            
+        </li>
+        
+    </ul>
+
+    <hr>
+</div>
+        <div class="page-title">
+            自动类型转换&强制类型转换
+        </div>
+        <div class="content">
+            <div class="page-subtitle">
+    
+        
+            <b>[</b>
+        
+        <a href="/tags/#c" title="c">c</a>
+        
+            <b>]</b>
+        
+    
+</div>
+
+<h4 id="自动类型转换">自动类型转换</h4>
+
+<ul>
+  <li>当运算符的两边出现不一致的类型时，会自动转换成较大的类型</li>
+</ul>
+
+<blockquote>
+  <p>大的意思是能表达的数的范围更大</p>
+
+  <p>char -&gt; short -&gt; int -&gt; long -&gt; long long</p>
+
+  <p>int -&gt; float -&gt; double</p>
+</blockquote>
+
+<ul>
+  <li>对于printf，任何小于int的类型会被转换成int；float会被转换成double</li>
+  <li>但是scanf不会，要输入short，需要%hd</li>
+</ul>
+
+<h4 id="强制类型转换">强制类型转换</h4>
+
+<ul>
+  <li>
+    <p>要把一个量强制转换成另一个类型（通常是较小的类型），需要：（类型）值</p>
+  </li>
+  <li>
+    <p>比如：（int）10.2；（short）32</p>
+  </li>
+  <li>
+    <p>注意这时候的安全性，小的变量不总能表达大的量，如：(short)32768</p>
+
+    <blockquote>
+      <p>只是从那个变量计算出了一个新的类型的值，它并不改变那个变量，无论是值还是类型都不改变</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>强制类型转换的优先级高于四则运算</p>
+  </li>
+</ul>
+
+
+        </div>
+        <div class="footer">
+    
+        <br>
+    
+</div>
+
+    </div>
+</body>

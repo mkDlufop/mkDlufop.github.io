@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+
+    <title>Linux基本配置 - mkDlufop`s blog</title>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QJCB6SJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q1QJCB6SJM');
+    </script>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, mkDlufop, mkDlufop`s blog, jekyll">
+    <meta name="author" content="mkDlufop">
+
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+    <link rel="icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+    <link rel="shortcut-icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+
+    <!-- For Facebook -->
+    <meta property="og:title" content="Linux基本配置 - mkDlufop`s blog" />
+    <meta property="og:image" itemprop="image" content="http://localhost:4000/assets/favicon.ico" />
+    <meta property="og:description" content="" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Linux基本配置 - mkDlufop`s blog" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/favicon.ico" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+    <a class="site-title" href="http://localhost:4000/">mkDlufop`s blog</a>
+
+    <ul class="pull-right">
+        
+        <li class="pull-left">
+            
+            <a href="http://localhost:4000/about">About</a>
+            /
+        </li>
+        
+        <li class="pull-left">
+            
+            <a href="https://mkdlufop.github.io/">Links</a>
+            
+        </li>
+        
+    </ul>
+
+    <hr>
+</div>
+        <div class="page-title">
+            Linux基本配置
+        </div>
+        <div class="content">
+            <div class="page-subtitle">
+    
+        
+            <b>[</b>
+        
+        <a href="/tags/#Linux" title="Linux">Linux</a>
+        
+            <b>]</b>
+        
+    
+</div>
+
+<h5 id="apt相关">APT相关</h5>
+
+<ol>
+  <li>
+    <p>更新命令：apt update &amp;&amp; apt -y full-upgrade</p>
+
+    <p>#apt update (更新软件仓库的目录)</p>
+
+    <h6 id="安装任何软件之前必须先更新目录">安装任何软件之前必须先更新目录</h6>
+
+    <p>#apt full-upgrade (下载软件并安装)</p>
+  </li>
+  <li>
+    <p>关于更新源</p>
+
+    <p>cat /etc/apt/sources.list</p>
+  </li>
+  <li>
+    <p>安装软件</p>
+
+    <p>库安装：apt install package_name</p>
+
+    <p>安装DEB安装包：</p>
+
+    <p>apt install ./name.deb或dekg -i name.deb</p>
+  </li>
+  <li>
+    <p>sudo passwd root 修改root密码</p>
+  </li>
+</ol>
+
+<h5 id="rpm相关">RPM相关</h5>
+
+<ol>
+  <li>
+    <p>yum update	# 升级所有包的同时升级软件和系统内核</p>
+
+    <p>yum upgrade	# 只升级所有的包，不升级软件和系统内核</p>
+  </li>
+  <li>
+    <p>授予sudo权限（centos上，默认情况下组wheel的成员被赋予sudo访问权限）</p>
+
+    <p>usermod -aG wheel mkDlufop</p>
+  </li>
+</ol>
+
+<h5 id="关闭sudo">关闭sudo</h5>
+
+<ol>
+  <li>
+    <p>打开visudo: sudo visudo</p>
+  </li>
+  <li>
+    <p>修改 %sudo   ALL=(ALL:ALL) ALL 为 %sudo   ALL=(ALL:ALL) NOPASSWD:ALL，它的作用是</p>
+
+    <p>Allow members of group sudo to execute any command <strong>without password</strong>。</p>
+
+    <blockquote>
+      <p>有安全风险，请谨慎使用。</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h5 id="虚拟机辅助工具">虚拟机辅助工具</h5>
+
+<ol>
+  <li>虚拟机增强工具： apt -y install open-vm-tools-desktop fuse &amp;&amp; reboot</li>
+</ol>
+
+<h5 id="输入法">输入法</h5>
+
+<ol>
+  <li>
+    <p>apt install ibus ibus-pinyin</p>
+
+    <p>设置：ibus-setup</p>
+  </li>
+  <li>
+    <p>微软字体：</p>
+
+    <p>apt install ttf-mscorefonts-installer</p>
+
+    <p>文泉译微米黑:</p>
+
+    <p>apt install fonts-wqy-microhei</p>
+  </li>
+  <li></li>
+</ol>
+
+<h5 id="软件安装">软件安装</h5>
+
+<ol>
+  <li>
+    <p>办公软件</p>
+
+    <p>apt install libreoffice</p>
+
+    <p>或</p>
+
+    <p>https://www.onlyoffice.com/download-desktop.aspx</p>
+
+    <p>apt install ./onlyoffice desktopeditors amd64,deb</p>
+  </li>
+  <li>
+    <p>安装java</p>
+
+    <p>add-apt-repository ppa:webupd8team/java
+apt update</p>
+
+    <p>apt install java-common oracle-java8-installer
+apt install oracle-java8-set default</p>
+  </li>
+  <li>
+    <p>安装zsh</p>
+
+    <p>apt install zsh</p>
+
+    <p>chsh -s $(which zsh) # 切换默认shell为zsh</p>
+  </li>
+</ol>
+
+
+
+        </div>
+        <div class="footer">
+    
+        <br>
+    
+</div>
+
+    </div>
+</body>

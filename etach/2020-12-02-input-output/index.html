@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+
+    <title>格式化输入输出 - mkDlufop`s blog</title>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QJCB6SJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q1QJCB6SJM');
+    </script>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, mkDlufop, mkDlufop`s blog, jekyll">
+    <meta name="author" content="mkDlufop">
+
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+    <link rel="icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+    <link rel="shortcut-icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+
+    <!-- For Facebook -->
+    <meta property="og:title" content="格式化输入输出 - mkDlufop`s blog" />
+    <meta property="og:image" itemprop="image" content="http://localhost:4000/assets/favicon.ico" />
+    <meta property="og:description" content="" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="格式化输入输出 - mkDlufop`s blog" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/favicon.ico" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+    <a class="site-title" href="http://localhost:4000/">mkDlufop`s blog</a>
+
+    <ul class="pull-right">
+        
+        <li class="pull-left">
+            
+            <a href="http://localhost:4000/about">About</a>
+            /
+        </li>
+        
+        <li class="pull-left">
+            
+            <a href="https://mkdlufop.github.io/">Links</a>
+            
+        </li>
+        
+    </ul>
+
+    <hr>
+</div>
+        <div class="page-title">
+            格式化输入输出
+        </div>
+        <div class="content">
+            <div class="page-subtitle">
+    
+        
+            <b>[</b>
+        
+        <a href="/tags/#c" title="c">c</a>
+        
+            <b>]</b>
+        
+    
+</div>
+
+<ul>
+  <li>
+    <p><strong>printf</strong></p>
+
+    <ul>
+      <li>
+        <p>% [flags] [width] [.prec] [hlL] type</p>
+
+        <blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">flags</th>
+                <th style="text-align: center">含义</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">-</td>
+                <td style="text-align: center">左对齐</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">+</td>
+                <td style="text-align: center">在前面放+</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">(space)</td>
+                <td style="text-align: center">正数留空</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">0</td>
+                <td style="text-align: center">0填充</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+
+        <blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">width或.prec</th>
+                <th style="text-align: center">含义</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">number</td>
+                <td style="text-align: center">最小字符数(输出的内容总共可以占居的字符数)</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">*</td>
+                <td style="text-align: center">下一个参数是字符数，如printf(“%*d\n”,6,123);printf(“%6d\n”,len,123);</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">.number</td>
+                <td style="text-align: center">小数点后的位数</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">.*</td>
+                <td style="text-align: center">下一个参数是小数点后的位数</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+
+        <blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">类型修饰</th>
+                <th style="text-align: center">含义</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">hh</td>
+                <td style="text-align: center">单个字节</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">h</td>
+                <td style="text-align: center">short</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">l</td>
+                <td style="text-align: center">long</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">ll</td>
+                <td style="text-align: center">long long</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">L</td>
+                <td style="text-align: center">long double</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+
+        <blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">type</th>
+                <th style="text-align: center">用于</th>
+                <th style="text-align: center">type</th>
+                <th style="text-align: center">用于</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">i或d</td>
+                <td style="text-align: center">int</td>
+                <td style="text-align: center">g</td>
+                <td style="text-align: center">float</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">u</td>
+                <td style="text-align: center">unsigned int</td>
+                <td style="text-align: center">G</td>
+                <td style="text-align: center">float</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">o</td>
+                <td style="text-align: center">八进制</td>
+                <td style="text-align: center">a或A</td>
+                <td style="text-align: center">十六进制浮点</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">x</td>
+                <td style="text-align: center">十六进制</td>
+                <td style="text-align: center">c</td>
+                <td style="text-align: center">char</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">X</td>
+                <td style="text-align: center">字母大写的十六进制</td>
+                <td style="text-align: center">s</td>
+                <td style="text-align: center">字符串</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">f或F</td>
+                <td style="text-align: center">float</td>
+                <td style="text-align: center">p</td>
+                <td style="text-align: center">指针</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">e或E</td>
+                <td style="text-align: center">指数</td>
+                <td style="text-align: center">n</td>
+                <td style="text-align: center">读入/读出的个数，如：int num;printf(“%d%n”,12345,&amp;num);printf(“%d”,num); //执行到%n时将输出的字符个数保存到&amp;num所指的变量里</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>scanf</strong></p>
+
+    <ul>
+      <li>
+        <p>% [flag] type</p>
+
+        <blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">flag</th>
+                <th style="text-align: center">含义</th>
+                <th style="text-align: center">flag</th>
+                <th style="text-align: center">含义</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">*</td>
+                <td style="text-align: center">跳过，如int num;scanf(“%*d%d”, &amp;num); // 跳过输入的第一个整数，将第二个整数给num</td>
+                <td style="text-align: center">l</td>
+                <td style="text-align: center">long,double</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">数字</td>
+                <td style="text-align: center">最大字符数</td>
+                <td style="text-align: center">ll</td>
+                <td style="text-align: center">long long</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">hh</td>
+                <td style="text-align: center">char</td>
+                <td style="text-align: center">L</td>
+                <td style="text-align: center">long double</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">h</td>
+                <td style="text-align: center">short</td>
+                <td style="text-align: center"> </td>
+                <td style="text-align: center"> </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+
+        <blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">type</th>
+                <th style="text-align: center">用于</th>
+                <th style="text-align: center">type</th>
+                <th style="text-align: center">用于</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">d</td>
+                <td style="text-align: center">int</td>
+                <td style="text-align: center">a,e,f,g</td>
+                <td style="text-align: center">float</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">i</td>
+                <td style="text-align: center">整数，可能为十六进制或八进制(根据输入的整数的情况决定以哪种形式读进来)</td>
+                <td style="text-align: center">c</td>
+                <td style="text-align: center">char</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">u</td>
+                <td style="text-align: center">unsigned int</td>
+                <td style="text-align: center">s</td>
+                <td style="text-align: center">字符串</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">o</td>
+                <td style="text-align: center">八进制</td>
+                <td style="text-align: center">[…]</td>
+                <td style="text-align: center">所允许的字符</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">x</td>
+                <td style="text-align: center">十六进制</td>
+                <td style="text-align: center">p</td>
+                <td style="text-align: center">指针</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </div>
+        <div class="footer">
+    
+        <br>
+    
+</div>
+
+    </div>
+</body>

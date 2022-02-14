@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+
+    <title>双系统下时间显示不对（Windows+Linux） - mkDlufop`s blog</title>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QJCB6SJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q1QJCB6SJM');
+    </script>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, mkDlufop, mkDlufop`s blog, jekyll">
+    <meta name="author" content="mkDlufop">
+
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+    <link rel="icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+    <link rel="shortcut-icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+
+    <!-- For Facebook -->
+    <meta property="og:title" content="双系统下时间显示不对（Windows+Linux） - mkDlufop`s blog" />
+    <meta property="og:image" itemprop="image" content="http://localhost:4000/assets/favicon.ico" />
+    <meta property="og:description" content="" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="双系统下时间显示不对（Windows+Linux） - mkDlufop`s blog" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/favicon.ico" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+    <a class="site-title" href="http://localhost:4000/">mkDlufop`s blog</a>
+
+    <ul class="pull-right">
+        
+        <li class="pull-left">
+            
+            <a href="http://localhost:4000/about">About</a>
+            /
+        </li>
+        
+        <li class="pull-left">
+            
+            <a href="https://mkdlufop.github.io/">Links</a>
+            
+        </li>
+        
+    </ul>
+
+    <hr>
+</div>
+        <div class="page-title">
+            双系统下时间显示不对（Windows+Linux）
+        </div>
+        <div class="content">
+            <div class="page-subtitle">
+    
+        
+            <b>[</b>
+        
+        <a href="/tags/#Linux" title="Linux">Linux</a>
+        
+            <b>]</b>
+        
+    
+</div>
+
+<h3 id="前置知识">前置知识</h3>
+
+<p>Windows与类Unix系统默认的时间管理方式：</p>
+
+<p><strong>Windows</strong>：本地时间（local time）=计算机硬件时间=BIOS中显示的时间。</p>
+
+<p><strong>类Unix系统</strong>：本地时间（local time）=计算机硬件时间+系统设置的时区数=BIOS时间+系统设置的时区数。类Unix系统会把BIOS时间当成UTC，所以待系统启动后，系统显示的时间为BIOS时间+系统设置的时区数。</p>
+
+<h3 id="双系统下时间显示不对的原因">双系统下时间显示不对的原因</h3>
+
+<p>Windows与类Unix系统默认的时间管理方式不同。假设现在是13点，Ubuntu设置的时区在中国，那么Ubuntu里会显示13点，此时BIOS里的时间是5点。然后切换到Windows，会发现时间不对。因为Windows以BIOS中显示的时间为本地时间，所以此时Windows中显示的时间为5点。在Windows里同步时间，此时时间会显示为13点，BIOS的时间会被改为13点。之后再切换到Ubuntu下，会发现显示的时间变成了21点。</p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>方案一：</p>
+
+<p>1，先在Ubuntu下更新时间：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ntpdate
+<span class="nb">sudo </span>ntpdate time.windows.com
+</code></pre></div></div>
+
+<p>2，将系统时间同步到硬件上：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>hwclock <span class="nt">--localtime</span> <span class="nt">--systohc</span> // <span class="nt">--systohc</span> 系统时钟和硬件时钟同步
+</code></pre></div></div>
+
+<p>方案二：</p>
+
+<p>在Ubuntu中把计算机硬件的时间改成系统显示时间，即禁用Ubuntu中的UTC。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>timedatectl set-local-rtc 1 <span class="nt">--adjust-system-clock</span>
+</code></pre></div></div>
+
+
+
+        </div>
+        <div class="footer">
+    
+        <br>
+    
+</div>
+
+    </div>
+</body>

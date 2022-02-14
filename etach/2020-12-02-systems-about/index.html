@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+
+    <title>系统相关 - mkDlufop`s blog</title>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QJCB6SJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q1QJCB6SJM');
+    </script>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, mkDlufop, mkDlufop`s blog, jekyll">
+    <meta name="author" content="mkDlufop">
+
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+    <link rel="icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+    <link rel="shortcut-icon" type="image/ico" href="http://localhost:4000/assets/favicon.ico">
+
+    <!-- For Facebook -->
+    <meta property="og:title" content="系统相关 - mkDlufop`s blog" />
+    <meta property="og:image" itemprop="image" content="http://localhost:4000/assets/favicon.ico" />
+    <meta property="og:description" content="" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="系统相关 - mkDlufop`s blog" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/favicon.ico" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+    <a class="site-title" href="http://localhost:4000/">mkDlufop`s blog</a>
+
+    <ul class="pull-right">
+        
+        <li class="pull-left">
+            
+            <a href="http://localhost:4000/about">About</a>
+            /
+        </li>
+        
+        <li class="pull-left">
+            
+            <a href="https://mkdlufop.github.io/">Links</a>
+            
+        </li>
+        
+    </ul>
+
+    <hr>
+</div>
+        <div class="page-title">
+            系统相关
+        </div>
+        <div class="content">
+            <div class="page-subtitle">
+    
+        
+            <b>[</b>
+        
+        <a href="/tags/#Linux" title="Linux">Linux</a>
+        
+            <b>]</b>
+        
+    
+</div>
+
+<h3 id="系统信息查看命令">系统信息查看命令</h3>
+
+<p>cat /etc/issue # 查看发行版信息</p>
+
+<p>uname -a # 查看内核/操作系统/CPU信息</p>
+
+<p>head -n 1 /etc/issue # 查看操作系统版本</p>
+
+<p>cat /proc/cpuinfo # 查看CPU信息</p>
+
+<p>hostname # 查看计算机名</p>
+
+<p>lspci -tv # 列出所有PCI设备</p>
+
+<p>lsusb -tv # 列出所有USB设备</p>
+
+<p>lsmod # 列出加载的内核模块</p>
+
+<p>env # 查看环境变量</p>
+
+<h3 id="资源硬盘占用情况">资源/硬盘占用情况</h3>
+
+<p>free -h # 查看内存信息</p>
+
+<p>free -m # 查看内存使用量和交换区使用量</p>
+
+<p>df -h # 查看各分区使用情况</p>
+
+<p>du -sh <目录名> # 查看指定目录的大小</目录名></p>
+
+<p>grep MemTotal /proc/meminfo # 查看内存总量</p>
+
+<p>grep MemFree /proc/meminfo # 查看空闲内存量</p>
+
+<p>uptime # 查看系统运行时间、用户数、负载</p>
+
+<p>cat /proc/loadavg # 查看系统负载</p>
+
+<h3 id="网络情况查看">网络情况查看</h3>
+
+<p>iptables -L # 查看防火墙设置</p>
+
+<p>route -n # 查看路由表</p>
+
+<p>netstat -lntp # 查看所有监听端口</p>
+
+<p>netstat -antp # 查看所有已经建立的连接</p>
+
+<p>netstat -s # 查看网络统计信息</p>
+
+<h3 id="磁盘和分区情况">磁盘和分区情况</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>mount</td>
+      <td>column -t # 查看挂接的分区状态</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>fdisk -l # 查看所有分区</p>
+
+<p>swapon -s # 查看所有交换分区</p>
+
+<p>hdparm -i /dev/hda # 查看磁盘参数(仅适用于IDE设备)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>dmesg</td>
+      <td>grep IDE # 查看启动时IDE设备检测状况</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="用户查看">用户查看</h3>
+
+<p>w # 查看活动用户</p>
+
+<p>id <用户名> # 查看指定用户信息</用户名></p>
+
+<p>last # 查看用户登录日志</p>
+
+<p>cut -d: -f1 /etc/passwd # 查看系统所有用户</p>
+
+<p>cut -d: -f1 /etc/group # 查看系统所有组</p>
+
+<p>crontab -l # 查看当前用户的计划任务</p>
+
+<h3 id="进程查看">进程查看</h3>
+
+<p>ps -ef # 查看所有进程</p>
+
+<p>top # 实时显示进程状态</p>
+
+<p>###　系统服务情况</p>
+
+<p>chkconfig –list # 列出所有系统服务</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>chkconfig –list</td>
+      <td>grep on # 列出所有启动的系统服务</td>
+    </tr>
+  </tbody>
+</table>
+
+
+        </div>
+        <div class="footer">
+    
+        <br>
+    
+</div>
+
+    </div>
+</body>

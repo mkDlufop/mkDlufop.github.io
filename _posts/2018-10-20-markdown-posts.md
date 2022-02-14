@@ -5,7 +5,7 @@ subtitle: This post explains how you can write posts using Markdown.
 tags: [guide, markdown]
 ---
 
-This post is written in markdown, but you can also write a [post using html]({% link _posts/2020-02-27-html-posts.html %}).
+This post is written in markdown, but you can also write a [post using html]({% link _posts/2020-02-27-infinite-monkey-therom.md %}).
 
 <span class="color-red">[NEW]:</span> Now you can also create a private post, which will not be visible on the blog homepage, but is accessible via a URL. See [this secret post]({% link _posts/2020-04-05-private-example.html %}) as an example.
 
