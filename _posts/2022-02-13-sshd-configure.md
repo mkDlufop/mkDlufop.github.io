@@ -2,7 +2,7 @@
 layout: post
 title: 配置SSHD服务与远程登陆
 subtitle: 在Linux环境下
-tags: [环境配置]
+tags: [环境配置,ssh]
 ---
 
 ### SSH服务端

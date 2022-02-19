@@ -2,7 +2,7 @@
 layout: post
 title: Linux基本配置
 subtitle: 
-tags: [Linux]
+tags: [环境配置,Linux]
 ---
 
 ##### APT相关

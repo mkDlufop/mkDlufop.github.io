@@ -2,7 +2,7 @@
 layout: post
 title: Linux下的包管理工具
 subtitle: 
-tags: [Linux]
+tags: [环境配置,Linux]
 ---
 
 ##### APT

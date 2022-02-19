@@ -2,7 +2,7 @@
 layout: post
 title: vim配置
 subtitle: 
-tags: [vim]
+tags: [环境配置,vim]
 ---
 
 

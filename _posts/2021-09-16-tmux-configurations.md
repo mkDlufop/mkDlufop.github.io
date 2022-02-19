@@ -2,7 +2,7 @@
 layout: post
 title: tmux配置
 subtitle:
-tags: [tmux]
+tags: [环境配置,tmux]
 ---
 
 ```tmux
