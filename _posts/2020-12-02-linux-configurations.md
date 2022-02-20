@@ -5,41 +5,56 @@ subtitle:
 tags: [环境配置,Linux]
 ---
 
-##### APT相关
+* TOC
+{:toc}
 
-1. 更新命令：apt update && apt -y full-upgrade
+### 包管理工具（package management utility）
 
-   #apt update (更新软件仓库的目录) 
+#### Debian系
 
-   ######       安装任何软件之前必须先更新目录
+Debian系Linux使用deb软件包格式。Debian系下常见的包管理工具有dpkg、apt、apt-get。
 
-   #apt full-upgrade (下载软件并安装)
+```shell
+##### 1,更新
+# 更新可用软件包和版本的列表 并 将所有已安装的软件包升级到其最新可用版本
+sudo apt update && sudo apt -y full-upgrade 
+# 查看更新源
+cat /etc/apt/sources.list
 
-2. 关于更新源
+##### 2,安装软件
+# 库安装
+sudo apt install package_name
+# 安装deb安装包
+sudo apt install ./name.deb或dekg -i name.deb
+```
 
-   cat /etc/apt/sources.list
+#### Red Hat系
 
-3. 安装软件
+Red Hat系Linux使用rpm软件包格式。Red Hat系下常见的包管理工具有rpm、yum。
 
-   库安装：apt install package_name
+```shell
+##### 1,更新
+# 升级所有包的同时升级软件和系统内核
+sudo yum update
+# 只升级所有的包，不升级软件和系统内核
+sudo yum upgrade
 
-   安装DEB安装包：
+##### 2,安装软件
+# 库安装
+sudo yum install package_name
+# 安装rpm安装包
+sudo rpm -i name.rpm
+```
 
-   apt install ./name.deb或dekg -i name.deb
+### 权限相关
 
-4. sudo passwd root 修改root密码
+#### sudo权限
 
-##### RPM相关
+授予sudo权限（centos上，默认情况下组wheel的成员被赋予sudo访问权限）
 
-1. yum update	# 升级所有包的同时升级软件和系统内核
+`usermod -aG wheel mkDlufop`
 
-   yum upgrade	# 只升级所有的包，不升级软件和系统内核
-
-2. 授予sudo权限（centos上，默认情况下组wheel的成员被赋予sudo访问权限）
-
-   usermod -aG wheel mkDlufop
-
-##### 关闭sudo
+#### 关闭sudo
 
  1. 打开visudo: sudo visudo
 
@@ -49,55 +64,63 @@ tags: [环境配置,Linux]
     
     > 有安全风险，请谨慎使用。
 
+#### 修改root密码
 
-##### 虚拟机辅助工具
+`sudo passwd root `
 
-1. 虚拟机增强工具： apt -y install open-vm-tools-desktop fuse && reboot
+### 常用软件
 
+**办公软件**
 
-##### 输入法
+`apt install libreoffice` 或
 
-1. apt install ibus ibus-pinyin
+https://www.onlyoffice.com/download-desktop.aspx
 
-   设置：ibus-setup
+`apt install ./onlyoffice desktopeditors amd64,deb`
 
-2. 微软字体：
+**安装java**
 
-   apt install ttf-mscorefonts-installer
+```shell
+add-apt-repository ppa:webupd8team/java
+sudo apt update
 
-   文泉译微米黑:
+apt install java-common oracle-java8-installer
+apt install oracle-java8-set default
+```
 
-   apt install fonts-wqy-microhei
+**安装zsh**
 
-3. 
+```shell
+sudo apt install zsh
 
-##### 软件安装
+chsh -s $(which zsh) # 切换默认shell为zsh
+```
 
-1. 办公软件
+**输入法**
 
-   apt install libreoffice
+```shell
+#  安装ibus
+sudo apt install ibus ibus-pinyin
+# 设置 ibus
+ibus-setup
 
-   或
+##### 字体 
+# 微软字体：
+sudo apt install ttf-mscorefonts-installer
+# 文泉译微米黑:
+sudo apt install fonts-wqy-microhei
+```
 
-   https://www.onlyoffice.com/download-desktop.aspx
+### 虚拟机相关
 
-   apt install ./onlyoffice desktopeditors amd64,deb
+**虚拟机辅助工具**
 
-2. 安装java
+1. 虚拟机增强工具： `sudo apt -y install open-vm-tools-desktop fuse && reboot `
 
-   add-apt-repository ppa:webupd8team/java
-   apt update
+### 参考资料：
+{:.no_toc}
 
-   apt install java-common oracle-java8-installer
-   apt install oracle-java8-set default
+[1] [Linux发行版列表](https://zh.wikipedia.org/wiki/Linux%E5%8F%91%E8%A1%8C%E7%89%88%E5%88%97%E8%A1%A8)
 
-3. 安装zsh
-
-   apt install zsh
-   
-   chsh -s $(which zsh) # 切换默认shell为zsh
-   
-   
-
-
+[2] [Linux发行版](https://zh.wikipedia.org/wiki/Linux%E5%8F%91%E8%A1%8C%E7%89%88)
 
