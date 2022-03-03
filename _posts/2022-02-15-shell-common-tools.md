@@ -9,8 +9,9 @@ tags: [Shell]
 
 - 命令解释器（command interpreter）
   - **Shell是操作系统内核与用户之间交互的一个接口。[Shell分为命令行式Shell和图形界面式Shell](https://en.wikipedia.org/wiki/Shell_(computing))。[传统意义上的Shell指的是命令行式的Shell](https://baike.baidu.com/item/shell/99702#:~:text=%E4%BC%A0%E7%BB%9F%E6%84%8F%E4%B9%89%E4%B8%8A%E7%9A%84shell%E6%8C%87%E7%9A%84%E6%98%AF%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%8F%E7%9A%84shell)。**
-
 - Shell是一个用C语言编写的程序。Shell既是一种命令语言，又是一种程序设计语言。
+
+> 只要我们能想到的，就一定有方便的办法能够办到。因此当你想要完成某件事却又不知道应该做什么的时候，请向Google求助。
 
 > [**重要的是你要知道有些问题使用合适的工具就会迎刃而解，而具体选择哪个工具则不是那么重要。**](https://missing-semester-cn.github.io/2020/shell-tools/#:~:text=%E9%87%8D%E8%A6%81%E7%9A%84%E6%98%AF%E4%BD%A0%E8%A6%81%E7%9F%A5%E9%81%93%E6%9C%89%E4%BA%9B%E9%97%AE%E9%A2%98%E4%BD%BF%E7%94%A8%E5%90%88%E9%80%82%E7%9A%84%E5%B7%A5%E5%85%B7%E5%B0%B1%E4%BC%9A%E8%BF%8E%E5%88%83%E8%80%8C%E8%A7%A3%EF%BC%8C%E8%80%8C%E5%85%B7%E4%BD%93%E9%80%89%E6%8B%A9%E5%93%AA%E4%B8%AA%E5%B7%A5%E5%85%B7%E5%88%99%E4%B8%8D%E6%98%AF%E9%82%A3%E4%B9%88%E9%87%8D%E8%A6%81%E3%80%82)
 
@@ -68,6 +69,22 @@ grep -C 5
 #### 文件管理器
 
 [nnn](https://github.com/jarun/nnn)  [ranger](https://github.com/ranger/ranger)
+
+#### 通知工具
+
+notify-send # 使用当前桌面环境的通知系统创建一条通知
+
+#### 查看日志
+
+```shell
+# 显示此次开机后systemd的所有日志
+journalctl -b
+```
+
+```shell
+# 显示内核的日志
+dmesg
+```
 
 
 

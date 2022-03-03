@@ -10,6 +10,8 @@ tags: [Linux]
 ```shell
 cat /etc/issue # 查看发行版信息
 
+cat /etc/os-release # 查看当前的操作系统版本
+
 uname -a # 查看内核/操作系统/CPU信息
 
 head -n 1 /etc/issue # 查看操作系统版本

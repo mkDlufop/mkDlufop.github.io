@@ -64,6 +64,15 @@ sudo rpm -i name.rpm
     
     > 有安全风险，请谨慎使用。
 
+> **谨慎使用root用户权限执行命令！**
+>
+> 一些会对系统带来毁灭性破坏的例子：
+>
+> - `rm -rf /`（删除系统中的所有可以删除的文件，**包括被挂载的其他分区**。**即使不以 `root` 权限执行，也可以删掉自己的所有文件。**）
+> - `mkfs.ext4 /dev/sda`（将系统的第一块硬盘直接格式化为 ext4 文件系统。这会破坏其上所有的文件。）
+> - `dd if=/dev/urandom of=/dev/sda`（对系统的第一块硬盘直接写入伪随机数。这会破坏其上所有的文件，并且找回文件的可能性降低。）
+> - `:(){ :|: & };:`（被称为「Fork 炸弹」，会消耗系统所有的资源。在未对进程资源作限制的情况下，只能通过重启系统解决，所有未保存的数据会丢失。）
+
 #### 修改root密码
 
 `sudo passwd root `
@@ -111,6 +120,10 @@ sudo apt install ttf-mscorefonts-installer
 sudo apt install fonts-wqy-microhei
 ```
 
+**截图**
+
+[flameshot](https://flameshot.org/#download) : `sudo apt install flameshot`
+
 ### 虚拟机相关
 
 **虚拟机辅助工具**
@@ -124,3 +137,4 @@ sudo apt install fonts-wqy-microhei
 
 [2] [Linux发行版](https://zh.wikipedia.org/wiki/Linux%E5%8F%91%E8%A1%8C%E7%89%88)
 
+[3] [Linux 101 用户与用户组、文件权限、文件系统层次结构](https://101.lug.ustc.edu.cn/Ch05/#root-user)
