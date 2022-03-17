@@ -18,6 +18,8 @@ head -n 1 /etc/issue # 查看操作系统版本
 
 cat /proc/cpuinfo # 查看CPU信息，CPU的信息在启动的过程中被装载到虚拟目录/proc下的cpuinfo文件中
 
+getconf LONG_BIT # 查看位数
+
 hostname # 查看计算机名
 
 lspci -tv # 列出所有PCI设备

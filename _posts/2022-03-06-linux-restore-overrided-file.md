@@ -47,4 +47,8 @@ $ echo 123 >| test.txt
 
 [1] [Can overwritten files be recovered?](https://unix.stackexchange.com/questions/149342/can-overwritten-files-be-recovered)
 
-[2] [如何关闭linux系统中的覆盖输出重定向（>）功能](https://blog.51cto.com/cuchadanfan/1670308)
+[2] [zsh: Disable "file exists:" warning with redirection](https://unix.stackexchange.com/questions/212127/zsh-disable-file-exists-warning-with-redirection)
+
+[3] [Prevent overwriting a file with redirection](https://unix.stackexchange.com/questions/483122/prevent-overwriting-a-file-with-redirection)
+
+[4] [Bash Reference Manual: 4.3.1 The Set Builtin](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#The-Set-Builtin)
