@@ -7,6 +7,8 @@ tags: [Linux]
 
 cowsay "Hello folks" \| lolcat
 
+figlet Linux
+
 cmatrix
 
 
