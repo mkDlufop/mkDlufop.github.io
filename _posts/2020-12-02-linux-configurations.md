@@ -50,9 +50,13 @@ sudo rpm -i name.rpm
 
 #### sudo权限
 
-授予sudo权限（centos上，默认情况下组wheel的成员被赋予sudo访问权限）
+添加用户至 sudo 用户组
 
-`usermod -aG wheel mkDlufop`
+`sudo adduser mkdlufop sudo`
+
+> centos上，默认情况下组wheel的成员被赋予sudo访问权限：
+>
+> `usermod -aG wheel mkDlufop`
 
 #### 关闭sudo
 
@@ -108,12 +112,29 @@ chsh -s $(which zsh) # 切换默认shell为zsh
 **输入法**
 
 ```shell
-#  安装ibus
+# 安装ibus
 sudo apt install ibus ibus-pinyin
 # 设置 ibus
 ibus-setup
+```
 
-##### 字体 
+> 添加中文拼音输入法（ Intelligent Pinyin input method for IBus ）(该方法成功实践于 Ubuntu 系统)
+>
+> 1. 在设置中添加中文语言支持：
+>
+>     Settings -> Region & Language -> Manage Installed Languages -> Installed / Remove Languages -> 勾选 Chinese (simplified) -> Apply
+>
+> 2. 更新系统，确保下载完整语言包：`sudo apt update && sudo apt upgrade`
+>
+> 3. 重启：`reboot`
+>
+> 4. 添加中文拼音输入法：
+>
+>     Settings -> Region & Language -> + -> Chinese -> Chinese (Intelligent Pinyin)
+
+**字体**
+
+```shell
 # 微软字体：
 sudo apt install ttf-mscorefonts-installer
 # 文泉译微米黑:
@@ -128,7 +149,7 @@ sudo apt install fonts-wqy-microhei
 
 **虚拟机辅助工具**
 
-1. 虚拟机增强工具： `sudo apt -y install open-vm-tools-desktop fuse && reboot `
+1. 虚拟机增强工具： `sudo apt -y install open-vm-tools-desktop fuse && reboot`
 
 ### 参考资料：
 {:.no_toc}
