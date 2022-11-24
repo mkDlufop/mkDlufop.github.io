@@ -151,6 +151,10 @@ sudo apt install fonts-wqy-microhei
 
 1. 虚拟机增强工具： `sudo apt -y install open-vm-tools-desktop fuse && reboot`
 
+    > 为了让每次开机时共享文件夹自动挂载到指定目录，添加以下内容到 `/etc/fstab` ：
+    >
+    > `.host:/ /mnt/hgfs   fuse.vmhgfs-fuse    auto,allow_other  0   0`
+
 ### 参考资料：
 {:.no_toc}
 
@@ -159,3 +163,5 @@ sudo apt install fonts-wqy-microhei
 [2] [Linux发行版](https://zh.wikipedia.org/wiki/Linux%E5%8F%91%E8%A1%8C%E7%89%88)
 
 [3] [Linux 101 用户与用户组、文件权限、文件系统层次结构](https://101.lug.ustc.edu.cn/Ch05/#root-user)
+
+[4] [Open VM Tools and Folder Sharing](https://aaronvonawesome.com/posts/open-vm-tools-and-folder-sharing/)
