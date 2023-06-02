@@ -81,6 +81,12 @@ sudo rpm -i name.rpm
 
 `sudo passwd root `
 
+### 时间同步
+
+systemd 自带了一个 systemd-timesyncd 服务，提供了简单的时间同步服务。
+
+为了更快地同步时间，这里选用了中国 NTP 快速授时服务和中国计量科学研究院 NIM 授时服务的 NTP 服务器，编辑 `/etc/systemd/timesyncd.conf`，添加或编辑以下内容：`NTP=cn.ntp.org.cn ntp1.nim.ac.cn`。重启 systemd-timesyncd.service，之后运行 `timedatectl timesync-status` 便可查看时间同步状态。
+
 ### 常用软件
 
 **办公软件**
